@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Shakti Safety</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Shakti Safety</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="map.html">Map</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Volunteer Login</h2>
+    <p>Verified volunteers can log in to mark incidents and communicate with other volunteers.</p>
+    
+    <div class="form-container">
+      <div class="login-type-selector">
+        <button id="volunteerTab" class="tab-btn active" onclick="switchTab('volunteer')">Volunteer</button>
+        <button id="authorityTab" class="tab-btn" onclick="switchTab('authority')">Authority</button>
+      </div>
+      
+      <div id="volunteerForm">
+        <label>Volunteer ID</label>
+        <input type="text" id="volunteerId" placeholder="Enter your volunteer ID">
+        
+        <label>Password</label>
+        <input type="password" id="volunteerPassword" placeholder="Enter your password">
+        
+        <div class="login-options">
+          <label class="checkbox-container">
+            <input type="checkbox" id="rememberMe">
+            <span class="checkmark"></span>
+            Remember me
+          </label>
+          <a href="#" class="forgot-link">Forgot Password?</a>
+        </div>
+        
+        <button class="btn" onclick="loginVolunteer()">Login</button>
+      </div>
+      
+      <div id="authorityForm" style="display: none;">
+        <label>Authority ID</label>
+        <input type="text" id="authorityId" placeholder="Enter your authority ID">
+        
+        <label>Password</label>
+        <input type="password" id="authorityPassword" placeholder="Enter your password">
+        
+        <div class="login-options">
+          <label class="checkbox-container">
+            <input type="checkbox" id="authorityRememberMe">
+            <span class="checkmark"></span>
+            Remember me
+          </label>
+          <a href="#" class="forgot-link">Forgot Password?</a>
+        </div>
+        
+        <button class="btn" onclick="loginAuthority()">Login</button>
+      </div>
+      
+      <div class="register-prompt">
+        <p>Not registered yet? <a href="register.html">Register as a volunteer</a></p>
+      </div>
+    </div>
+    
+    <p id="status" class="status-message"></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Shakti Safety. All rights reserved.</p>
+  </footer>
+
+  <script src="login.js"></script>
+</body>
+</html>

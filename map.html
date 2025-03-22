@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shakti Safety Map</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Removed the callback parameter so we can initialize manually -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0429Eqm_TmMUNHCFaZogGL7Mr0oDRHHE"></script>
+</head>
+<body>
+  <header>
+    <h1>Shakti Safety</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="map.html">Map</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Shakti Safety Map</h2>
+    <div id="userInfo" class="user-info-panel" style="display:none;">
+      <p>Logged in as: <span id="userName"></span> (<span id="userType"></span>)</p>
+    </div>
+    
+    <div id="map"></div>
+
+    <!-- Controls and Marker Form -->
+    <div id="controls">
+      <button class="btn" onclick="clearMarkers()">Clear All Marks</button>
+    </div>
+
+    <div id="markerForm" style="display:none;">
+      <label>Select Mark Type:</label>
+      <select id="markType">
+        <option value="blue">Blue (Uncertain)</option>
+        <option value="red">Red (Certain)</option>
+        <option value="orange" class="authority-only" style="display:none;">Orange (Confirmed)</option>
+      </select>
+      <input type="password" id="passwordInput" placeholder="Enter Password">
+      <button class="btn" onclick="confirmAndPlaceMarker()">Confirm & Mark</button>
+    </div>
+
+    <div id="markerList">
+      <div class="marker-box blue-list">
+        <h3 style="color:#007BFF;">Blue Marks</h3>
+        <div id="blueMarks"></div>
+      </div>
+      <div class="marker-box red-list">
+        <h3 style="color:#DC3545;">Red Marks</h3>
+        <div id="redMarks"></div>
+      </div>
+      <div class="marker-box orange-list" style="display:none;">
+        <h3 style="color:#FD7E14;">Authority Marks</h3>
+        <div id="orangeMarks"></div>
+      </div>
+    </div>
+
+    <div class="fab" onclick="toggleMarkerForm()">
+      <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add">
+    </div>
+
+    <!-- Chat section (for verified users only) -->
+    <div id="chatSection" class="chat-section" style="display:none;">
+      <h3>Volunteer Chat</h3>
+      <div id="chatMessages" class="chat-messages"></div>
+      <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="Type your message...">
+        <button onclick="sendChatMessage()">Send</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Shakti Safety. All rights reserved.</p>
+  </footer>
+
+  <script src="map.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Shakti Safety</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Shakti Safety</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="map.html">Map</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Volunteer Registration</h2>
+    <p>Register to help make your community safer. You might get a verification call in 7 working days.</p>
+    
+    <div class="form-container">
+      <!-- Personal Details -->
+      <h3>Personal Details</h3>
+      
+      <label>Full Name *</label>
+      <input type="text" id="fullName" placeholder="Enter your full name">
+      
+      <label>Date of Birth *</label>
+      <input type="date" id="dob">
+      
+      <label>Gender *</label>
+      <select id="gender">
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      
+      <!-- Contact Details -->
+      <h3>Contact Details</h3>
+      
+      <label>Phone Number *</label>
+      <div class="input-group">
+        <input type="text" id="phone" placeholder="Enter phone number">
+        <button class="verify-btn" onclick="sendOTP('phone')">Verify</button>
+      </div>
+      <input type="text" id="phoneOtp" class="otp-box" placeholder="Enter OTP" style="display: none;">
+
+      <label>Email *</label>
+      <div class="input-group">
+        <input type="email" id="email" placeholder="Enter email">
+        <button class="verify-btn" onclick="sendOTP('email')">Verify</button>
+      </div>
+      <input type="text" id="emailOtp" class="otp-box" placeholder="Enter OTP" style="display: none;">
+      
+      <label>Address *</label>
+      <textarea id="address" placeholder="Enter your full address"></textarea>
+      
+      <!-- ID Verification -->
+      <h3>ID Verification</h3>
+      
+      <label>Aadhaar Number *</label>
+      <input type="text" id="aadhaar" placeholder="Enter your 12-digit Aadhaar Number">
+      
+      <label>Volunteer Type *</label>
+      <select id="volunteerType">
+        <option value="">Select volunteer type</option>
+        <option value="nss">NSS Member</option>
+        <option value="ncc">NCC Cadet</option>
+        <option value="social">Social Worker</option>
+        <option value="general">General Volunteer</option>
+      </select>
+      
+      <label>Organization/College (if applicable)</label>
+      <input type="text" id="organization" placeholder="Enter organization or college name">
+      
+      <!-- Account Setup -->
+      <h3>Create Account</h3>
+      
+      <label>Set Password *</label>
+      <input type="password" id="password" placeholder="Create a strong password">
+      
+      <label>Confirm Password *</label>
+      <input type="password" id="confirmPassword" placeholder="Confirm your password">
+      
+      <div class="terms-container">
+        <label class="checkbox-container">
+          <input type="checkbox" id="termsAgree">
+          <span class="checkmark"></span>
+          I agree to the Terms of Service and Privacy Policy
+        </label>
+      </div>
+
+      <button class="btn" onclick="registerVolunteer()">Register</button>
+    </div>
+    
+    <p id="status"></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Shakti Safety. All rights reserved.</p>
+  </footer>
+
+  <script src="register.js"></script>
+</body>
+</html>
